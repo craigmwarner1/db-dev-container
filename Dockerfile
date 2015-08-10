@@ -32,7 +32,7 @@ VOLUME /c:/Users/Web-Projects/:/var/www/workspace/
 # Update the default apache site with the config we created.
 ADD apache-config.conf /etc/apache2/sites-enabled/000-default.conf
 
-EXPOSE 8080
+EXPOSE 80
 EXPOSE 3306
 
 # By default, simply start apache.
