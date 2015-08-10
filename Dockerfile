@@ -22,12 +22,11 @@ ENV APACHE_LOCK_DIR /var/lock/apache2
 ENV APACHE_PID_FILE /var/run/apache2.pid
 
 
+RUN mkdir /workingdir/www
 # Copy site into place.
-ADD www /var/www/site
-ADD phpmyadmin /var/www/phpmyadmin
+ADD phpmyadmin /workingdir/www/phpmyadmin
 
-RUN mkdir /var/www/workspace
-VOLUME /c:/Users/Web-Projects/:/var/www/workspace/
+VOLUME /workingdir/
 
 # Update the default apache site with the config we created.
 ADD apache-config.conf /etc/apache2/sites-enabled/000-default.conf
